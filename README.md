@@ -1,2 +1,15 @@
 # ProxyPanel-for-3proxy
 ProxyPanel for 3proxy
+# Proxy Panel
+
+Proxy Panel — скрипт для управления временными пользователями 3proxy.
+
+**Разработка кода:** ChatGPT (OpenAI)  
+**Концепция и видение:** Иван Михайлович  
+
+## Лицензия
+Этот проект распространяется под лицензией **GNU General Public License v3.0 (GPL-3.0)**.  
+Вы можете использовать, изменять и распространять его, но любые модификации должны оставаться под GPL v3.
+
+Ссылка на лицензию: [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
+
