@@ -125,6 +125,9 @@ $API_KEY = "ваш_секретный_ключ";
 $PROXY_SERVER_IP   = "ваш_внешний_IP"; 
 $PROXY_SOCKS_PORT  = 1080;
 $PROXY_HTTP_PORT   = 3128;
+// Данные для входа админа
+$ADMIN_LOGIN = "admin";
+$ADMIN_PASSWORD = "admin";
 ?>
 ```
 
@@ -226,4 +229,5 @@ POST: curl -X POST http://127.0.0.1/proxypanel/api_create_user.php -d "key=API_K
 * Проверьте права на `/etc/3proxy/passwd` и перезапуск 3proxy.
 
 ---
+
 
