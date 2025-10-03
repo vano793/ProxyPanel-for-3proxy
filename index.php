@@ -36,23 +36,84 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 <meta charset="UTF-8">
 <title>Proxy Panel - Вход</title>
 <style>
-body{font-family:Arial;background:#f4f6f8;margin:0;padding:0;}
-.container{max-width:400px;margin:100px auto;padding:20px;background:white;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-input,button{width:100%;padding:10px;margin:5px 0;box-sizing:border-box;}
-button{background:#3498db;color:white;border:none;border-radius:5px;cursor:pointer;}
-button:hover{background:#2980b9;}
-.error{color:red;margin-bottom:10px;}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    max-width: 400px;
+    width: 90%;
+    padding: 30px 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+}
+input, button {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #2980b9;
+}
+.error {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fdf2f2;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
 </style>
 </head>
 <body>
 <div class="container">
-<h2>Вход в Proxy Panel</h2>
-<?php if($error) echo "<div class='error'>$error</div>"; ?>
-<form method="post">
-<input type="text" name="login" placeholder="Логин" required>
-<input type="password" name="password" placeholder="Пароль" required>
-<button type="submit">Войти</button>
-</form>
+    <div class="logo-container">
+        <img src="img/logo.jpg" alt="Proxy Panel Logo" class="logo">
+    </div>
+    <?php if($error): ?>
+        <div class="error"><?= htmlspecialchars($error) ?></div>
+    <?php endif; ?>
+    <form method="post">
+        <input type="text" name="login" placeholder="Логин" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+    </form>
 </div>
 </body>
 </html>
