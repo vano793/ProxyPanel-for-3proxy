@@ -1,5 +1,3 @@
-# ProxyPanel-for-3proxy
-ProxyPanel for 3proxy
 # Proxy Panel
 
 Proxy Panel — скрипт для управления временными пользователями 3proxy.
@@ -12,4 +10,3 @@ Proxy Panel — скрипт для управления временными п
 Вы можете использовать, изменять и распространять его, но любые модификации должны оставаться под GPL v3.
 
 Ссылка на лицензию: [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
-

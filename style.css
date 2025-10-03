@@ -1,0 +1,159 @@
+/*
+Proxy Panel — скрипт управления 3proxy пользователями
+Разработка кода: ChatGPT (OpenAI)
+Концепция и видение: Иван Михайлович
+Лицензия: GNU General Public License v3.0 (GPL-3.0)
+Ссылка на лицензию: https://www.gnu.org/licenses/gpl-3.0.html
+*/
+/* style.css - общий стиль для всей панели */
+body { 
+    font-family: Arial, sans-serif; 
+    background: #f4f6f8; 
+    margin: 0; 
+    padding: 0; 
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav {
+    background: #34495e;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Меню */
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* уменьшенный размер шрифта */
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+button {
+    padding: 5px 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c0392b;
+}
+
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-expired {
+    color: red;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+/* Таблицы со списком пользователей */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 13px; /* уменьшенный размер текста в ячейках */
+}
+
+th, td {
+    padding: 8px; /* чуть меньше отступов */
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Карточки с формой добавления пользователя */
+.card {
+    background: white;
+    padding: 15px; /* чуть меньше padding */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 14px; /* уменьшенный шрифт внутри карточки */
+}
+
+/* Инпуты и кнопки */
+input, button {
+    width: 100%;
+    padding: 8px; /* меньше, чем было */
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding:5px 5px; /* высота:5px, ширина:10px */
+    font-size:14px;   /* меньше шрифт */
+    background:#3498db;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.small-btn {
+	width: auto;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius:4px;
+}
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+button:hover {
+    background: #2980b9;
+}
