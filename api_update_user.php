@@ -64,19 +64,19 @@ try {
     file_put_contents('/etc/3proxy/passwd', implode(' ', $lines) . "\n");
 
     // Ответ API с данными для подключения
-    echo json_encode([
-        'success'=>true,
-        'username'=>$username,
-        'ttl_minutes'=>$ttl,
-        'expire_at'=>$expire_at,
-        'server'=>[
-            'ip'=>$PROXY_SERVER_IP,
-            'socks_port'=>$PROXY_SOCKS_PORT,
-            'http_port'=>$PROXY_HTTP_PORT,
-            'socks_url'=>"socks5://{$username}:{$user['password']}@{$PROXY_SERVER_IP}:{$PROXY_SOCKS_PORT}",
-            'http_url'=>"http://{$username}:{$user['password']}@{$PROXY_SERVER_IP}:{$PROXY_HTTP_PORT}"
-        ]
-    ]);
+echo json_encode([
+    'success'   => true,
+    'username'  => $username,
+    'ttl_minutes' => $ttl,
+    'expire_at' => $expire_at,
+    'server'    => [
+        'ip'        => $PROXY_SERVER_IP,
+        'socks_port'=> $PROXY_SOCKS_PORT,
+        'http_port' => $PROXY_HTTP_PORT,
+        'socks_url' => "socks5://{$username}:{$user['password']}@{$PROXY_SERVER_IP}:{$PROXY_SOCKS_PORT}",
+        'http_url'  => "http://{$username}:{$user['password']}@{$PROXY_SERVER_IP}:{$PROXY_HTTP_PORT}"
+    ]
+], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 } catch(Exception $e){
     echo json_encode(['error'=>$e->getMessage()]);
 }
