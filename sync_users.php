@@ -43,7 +43,7 @@ $result = sync_users(); // использует proxy.sqlite и /etc/3proxy/pass
         <pre><?=htmlspecialchars(implode("\n", $result['srv_out']))?></pre>
       <?php endif; ?>
     <?php endif; ?>
-    <form method="post"><button type="submit">Обновить</button></form>
+    <form method="post"><button class="small-btn" type="submit">Обновить</button></form>
   </div>
 </div>
 </body>
