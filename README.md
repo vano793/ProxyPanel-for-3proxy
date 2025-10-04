@@ -14,6 +14,15 @@ Proxy Panel — скрипт для управления временными п
 Отлично! Вот полный вариант инструкции с учётом твоих пожеланий: сначала вводная о создателе кода и функционале, затем установка и настройка.
 
 ---
+Фото/Screenshot
+![Авторизация](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_13-40-41.png?raw=true)
+![Список пользователей](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_14-07-39.png?raw=true)
+![Создать пользователя](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_14-08-01.png?raw=true)
+![Список пользователей](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_14-08-22.png?raw=true)
+![Тест записи](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_14-11-08.png?raw=true)
+![Инструкция API](https://github.com/vano793/ProxyPanel-for-3proxy/blob/main/screenshot/2025-10-04_14-11-32.png?raw=true)
+
+
 
 # **Proxy Panel — Инструкция**
 
@@ -248,6 +257,7 @@ POST: curl -X POST http://127.0.0.1/proxypanel/api_create_user.php -d "key=API_K
 * Проверьте права на `/etc/3proxy/passwd` и перезапуск 3proxy.
 
 ---
+
 
 
 
