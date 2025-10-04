@@ -87,6 +87,7 @@ sudo chown -R www-data:www-data /var/www/proxypanel
 2. Скопируйте все файлы панели в эту директорию:
 
 ```
+img/
 index.php
 dashboard.php
 add_user.php
@@ -162,8 +163,20 @@ sudo nano /etc/apache2/sites-available/proxypanel.conf
     CustomLog ${APACHE_LOG_DIR}/proxypanel_access.log combined
 </VirtualHost>
 ```
+2. Закройте доступ к базе данных:
+   
+```bash
+sudo nano /etc/apache2/apache2.conf    # для Ubuntu/Debian
+sudo nano /etc/httpd/conf/httpd.conf   # для CentOS/RHEL
+```
+и вставьте данный код:
+```bash
+<FilesMatch "\.sqlite$">
+    Require all denied
+</FilesMatch>
 
-2. Активируйте сайт и перезапустите Apache:
+```
+3. Активируйте сайт и перезапустите Apache:
 
 ```bash
 sudo a2ensite proxypanel.conf
@@ -177,16 +190,22 @@ sudo systemctl reload apache2
 1. В конфиге `/etc/3proxy/3proxy.cfg` должны быть строки:
 
 ```
+#Аутентификация
 auth strong
+#Используем внешний фаил для логинов и паролей
 include /etc/3proxy/passwd
 socks -p1080
 http -p3128
 ```
 
-2. Дайте права на перезапуск 3proxy без запроса пароля для веб-сервера:
-
+2. Дайте права на перезапуск 3proxy без запроса пароля для веб-сервера
+откройте 
 ```bash
-www-data ALL=(ALL) NOPASSWD: /bin/systemctl restart 3proxy
+sudo visudo
+```
+вставьте:
+```bash
+www-data ALL=(ALL) NOPASSWD: /bin/mv, /bin/chown, /bin/chmod, /bin/systemctl restart 3proxy
 ```
 
 ---
@@ -202,7 +221,7 @@ sudo crontab -u www-data -e
 Добавьте:
 
 ```bash
-*/5 * * * * /usr/bin/php /var/www/proxypanel/sync_users.php
+*/2 * * * * /usr/bin/php /var/www/proxypanel/sync_users.php
 ```
 
 ---
@@ -229,5 +248,6 @@ POST: curl -X POST http://127.0.0.1/proxypanel/api_create_user.php -d "key=API_K
 * Проверьте права на `/etc/3proxy/passwd` и перезапуск 3proxy.
 
 ---
+
 
 
